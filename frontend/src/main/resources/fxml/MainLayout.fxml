@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.licenseguard.frontend.controller.MainLayoutController">
+    <!-- Left Sidebar -->
+    <left>
+        <VBox spacing="10" prefWidth="240" styleClass="sidebar">
+            <padding>
+                <Insets top="20" right="15" bottom="20" left="15"/>
+            </padding>
+            <VBox spacing="2">
+                <Text text="LICENSEGUARD" styleClass="brand-title"/>
+                <Text text="v1.0 Desktop Client" styleClass="brand-subtitle"/>
+            </VBox>
+
+            <Separator style="-fx-opacity: 0.2;"/>
+
+            <VBox spacing="5" VBox.vgrow="ALWAYS">
+                <Button fx:id="btnDashboard" text="📊 Dashboard" onAction="#handleNavDashboard" maxWidth="Infinity" styleClass="nav-button, active"/>
+                <Button fx:id="btnDepartments" text="🏢 Departments" onAction="#handleNavDepartments" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="btnUsers" text="👥 Users" onAction="#handleNavUsers" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="btnVendors" text="🏭 Vendors" onAction="#handleNavVendors" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="btnSoftware" text="💻 Software" onAction="#handleNavSoftware" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="btnLicenses" text="🔑 Licenses" onAction="#handleNavLicenses" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="btnAssignments" text="📋 Assignments" onAction="#handleNavAssignments" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="btnRenewals" text="🔄 Renewals" onAction="#handleNavRenewals" maxWidth="Infinity" styleClass="nav-button"/>
+                <Button fx:id="btnReports" text="📈 Reports" onAction="#handleNavReports" maxWidth="Infinity" styleClass="nav-button"/>
+            </VBox>
+
+            <Separator style="-fx-opacity: 0.2;"/>
+
+            <Button text="🚪 Logout / Exit" onAction="#handleLogout" maxWidth="Infinity" styleClass="btn-secondary"/>
+        </VBox>
+    </left>
+
+    <!-- Center Content Shell -->
+    <center>
+        <VBox spacing="0">
+            <!-- Top Header Bar -->
+            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="header-bar">
+                <Text fx:id="headerTitle" text="Dashboard" styleClass="header-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="backendStatusLabel" text="API: CONNECTED (localhost:8080)" styleClass="status-pill-online"/>
+                <Button text="↻ Refresh" onAction="#handleGlobalRefresh" styleClass="btn-secondary"/>
+            </HBox>
+
+            <!-- Dynamic View Container -->
+            <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+            </StackPane>
+        </VBox>
+    </center>
+</BorderPane>

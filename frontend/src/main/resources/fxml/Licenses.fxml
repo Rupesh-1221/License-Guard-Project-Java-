@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="15" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.licenseguard.frontend.controller.LicenseController">
+    <!-- Action Bar -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="🔍 Search key / software..." prefWidth="220"/>
+        <ComboBox fx:id="statusFilter" promptText="Filter Status" prefWidth="140"/>
+        <ComboBox fx:id="softwareFilter" promptText="Filter Software" prefWidth="160"/>
+        <CheckBox fx:id="expiringCheckBox" text="Expiring (30d)" style="-fx-text-fill: #F9E2AF; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="↻ Refresh" onAction="#loadData" styleClass="btn-secondary"/>
+        <Button text="+ Add License" onAction="#handleAdd" styleClass="btn-primary"/>
+    </HBox>
+
+    <!-- Table -->
+    <TableView fx:id="licenseTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colSoftware" text="Software" prefWidth="150"/>
+            <TableColumn fx:id="colVendor" text="Vendor" prefWidth="130"/>
+            <TableColumn fx:id="colKey" text="License Key" prefWidth="180"/>
+            <TableColumn fx:id="colType" text="Type" prefWidth="110"/>
+            <TableColumn fx:id="colSeats" text="Available / Total" prefWidth="120"/>
+            <TableColumn fx:id="colExpiry" text="Expiry Date" prefWidth="110"/>
+            <TableColumn fx:id="colCost" text="Cost ($)" prefWidth="90"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+            <TableColumn fx:id="colActions" text="Actions" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>

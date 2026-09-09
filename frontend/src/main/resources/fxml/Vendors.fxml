@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="15" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.licenseguard.frontend.controller.VendorController">
+    <!-- Action Bar -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="🔍 Search vendors..." prefWidth="250"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="↻ Refresh" onAction="#loadData" styleClass="btn-secondary"/>
+        <Button text="+ Add Vendor" onAction="#handleAdd" styleClass="btn-primary"/>
+    </HBox>
+
+    <!-- Table -->
+    <TableView fx:id="vendorTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+            <TableColumn fx:id="colName" text="Vendor Name" prefWidth="200"/>
+            <TableColumn fx:id="colEmail" text="Contact Email" prefWidth="200"/>
+            <TableColumn fx:id="colWebsite" text="Website" prefWidth="220"/>
+            <TableColumn fx:id="colSoftwareCount" text="Software Count" prefWidth="120"/>
+            <TableColumn fx:id="colActions" text="Actions" prefWidth="160"/>
+        </columns>
+    </TableView>
+</VBox>

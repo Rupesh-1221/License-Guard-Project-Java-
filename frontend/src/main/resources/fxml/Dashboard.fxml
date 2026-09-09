@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane fitToWidth="true" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.licenseguard.frontend.controller.DashboardController" style="-fx-background-color: transparent;">
+    <VBox spacing="20">
+        <!-- 8 KPI Cards Grid -->
+        <GridPane hgap="15" vgap="15">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="25"/>
+                <ColumnConstraints percentWidth="25"/>
+                <ColumnConstraints percentWidth="25"/>
+                <ColumnConstraints percentWidth="25"/>
+            </columnConstraints>
+
+            <!-- Row 1 -->
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="kpi-card, kpi-blue">
+                <Text text="TOTAL LICENSES" styleClass="kpi-title"/>
+                <Label fx:id="lblTotalLicenses" text="0" styleClass="kpi-value"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="kpi-card, kpi-green">
+                <Text text="ACTIVE LICENSES" styleClass="kpi-title"/>
+                <Label fx:id="lblActiveLicenses" text="0" styleClass="kpi-value" style="-fx-fill: #A6E3A1;"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="kpi-card, kpi-amber">
+                <Text text="EXPIRING LICENSES (30D)" styleClass="kpi-title"/>
+                <Label fx:id="lblExpiringLicenses" text="0" styleClass="kpi-value" style="-fx-fill: #F9E2AF;"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="3" GridPane.rowIndex="0" styleClass="kpi-card, kpi-red">
+                <Text text="EXPIRED LICENSES" styleClass="kpi-title"/>
+                <Label fx:id="lblExpiredLicenses" text="0" styleClass="kpi-value" style="-fx-fill: #F38BA8;"/>
+            </VBox>
+
+            <!-- Row 2 -->
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="kpi-card, kpi-blue">
+                <Text text="TOTAL SOFTWARE" styleClass="kpi-title"/>
+                <Label fx:id="lblTotalSoftware" text="0" styleClass="kpi-value"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="kpi-card, kpi-green">
+                <Text text="TOTAL USERS" styleClass="kpi-title"/>
+                <Label fx:id="lblTotalUsers" text="0" styleClass="kpi-value"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="kpi-card, kpi-amber">
+                <Text text="AVAILABLE SEATS" styleClass="kpi-title"/>
+                <Label fx:id="lblAvailableSeats" text="0" styleClass="kpi-value"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="3" GridPane.rowIndex="1" styleClass="kpi-card, kpi-blue">
+                <Text text="TOTAL VENDORS" styleClass="kpi-title"/>
+                <Label fx:id="lblTotalVendors" text="0" styleClass="kpi-value"/>
+            </VBox>
+        </GridPane>
+
+        <!-- Tables Section -->
+        <HBox spacing="20">
+            <!-- Recent Assignments Table -->
+            <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="kpi-card">
+                <Text text="Recent License Assignments" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #89B4FA;"/>
+                <TableView fx:id="recentAssignmentsTable" prefHeight="220">
+                    <columns>
+                        <TableColumn fx:id="colAsgnUser" text="User" prefWidth="120"/>
+                        <TableColumn fx:id="colAsgnSoftware" text="Software" prefWidth="120"/>
+                        <TableColumn fx:id="colAsgnDate" text="Assigned Date" prefWidth="110"/>
+                        <TableColumn fx:id="colAsgnStatus" text="Status" prefWidth="90"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- Recent Renewals Table -->
+            <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="kpi-card">
+                <Text text="Recent Renewals" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #A6E3A1;"/>
+                <TableView fx:id="recentRenewalsTable" prefHeight="220">
+                    <columns>
+                        <TableColumn fx:id="colRenSoftware" text="Software" prefWidth="120"/>
+                        <TableColumn fx:id="colRenNewExpiry" text="New Expiry" prefWidth="110"/>
+                        <TableColumn fx:id="colRenCost" text="Cost" prefWidth="90"/>
+                        <TableColumn fx:id="colRenDate" text="Renewed Date" prefWidth="110"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </HBox>
+    </VBox>
+</ScrollPane>

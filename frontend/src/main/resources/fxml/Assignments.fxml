@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="15" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.licenseguard.frontend.controller.AssignmentController">
+    <!-- Assignment Creation Panel -->
+    <VBox spacing="12" styleClass="kpi-card, kpi-blue">
+        <Text text="Assign Software License to User" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #89B4FA;"/>
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="Select User:" style="-fx-text-fill: #CDD6F4; -fx-font-weight: bold;"/>
+                <ComboBox fx:id="userComboBox" promptText="-- Choose User --" maxWidth="Infinity"/>
+            </VBox>
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="Select Available License:" style="-fx-text-fill: #CDD6F4; -fx-font-weight: bold;"/>
+                <ComboBox fx:id="licenseComboBox" promptText="-- Choose License --" maxWidth="Infinity"/>
+            </VBox>
+            <VBox spacing="5" alignment="CENTER_LEFT" prefWidth="180">
+                <Label text="Available Seats:" style="-fx-text-fill: #CDD6F4; -fx-font-weight: bold;"/>
+                <Label fx:id="seatBadge" text="Select a license" styleClass="badge-suspended" style="-fx-font-size: 13px;"/>
+            </VBox>
+            <VBox spacing="5" alignment="BOTTOM_RIGHT">
+                <Button fx:id="btnAssign" text="Assign License" onAction="#handleAssign" styleClass="btn-primary" style="-fx-padding: 9 20 9 20;"/>
+            </VBox>
+        </HBox>
+    </VBox>
+
+    <!-- Filter & Action Bar -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="🔍 Search assigned user / software..." prefWidth="280"/>
+        <ComboBox fx:id="statusFilter" promptText="Filter Status" prefWidth="150"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="↻ Refresh List" onAction="#loadData" styleClass="btn-secondary"/>
+    </HBox>
+
+    <!-- Table -->
+    <TableView fx:id="assignmentTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colUser" text="Assigned User" prefWidth="180"/>
+            <TableColumn fx:id="colUserEmail" text="User Email" prefWidth="180"/>
+            <TableColumn fx:id="colSoftware" text="Software" prefWidth="160"/>
+            <TableColumn fx:id="colLicenseKey" text="License Key" prefWidth="180"/>
+            <TableColumn fx:id="colAssignedDate" text="Assigned Date" prefWidth="110"/>
+            <TableColumn fx:id="colUnassignedDate" text="Unassigned Date" prefWidth="110"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="90"/>
+            <TableColumn fx:id="colActions" text="Action" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>

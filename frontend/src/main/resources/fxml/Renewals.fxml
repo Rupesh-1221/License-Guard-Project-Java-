@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="15" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.licenseguard.frontend.controller.RenewalController">
+    <!-- Renewal Form Panel -->
+    <VBox spacing="12" styleClass="kpi-card, kpi-green">
+        <Text text="Execute License Renewal" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #A6E3A1;"/>
+        <GridPane hgap="15" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="30"/>
+                <ColumnConstraints percentWidth="20"/>
+                <ColumnConstraints percentWidth="20"/>
+                <ColumnConstraints percentWidth="15"/>
+                <ColumnConstraints percentWidth="15"/>
+            </columnConstraints>
+
+            <!-- Row 0 -->
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" spacing="4">
+                <Label text="Select License to Renew:" style="-fx-text-fill: #CDD6F4; -fx-font-weight: bold;"/>
+                <ComboBox fx:id="licenseComboBox" promptText="-- Choose License --" maxWidth="Infinity"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" spacing="4">
+                <Label text="Current Expiry Date:" style="-fx-text-fill: #CDD6F4; -fx-font-weight: bold;"/>
+                <TextField fx:id="currentExpiryField" editable="false" promptText="N/A" style="-fx-opacity: 0.8;"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="2" GridPane.rowIndex="0" spacing="4">
+                <Label text="New Expiry Date:" style="-fx-text-fill: #CDD6F4; -fx-font-weight: bold;"/>
+                <DatePicker fx:id="newExpiryPicker" promptText="Pick new date" maxWidth="Infinity"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="3" GridPane.rowIndex="0" spacing="4">
+                <Label text="Renewal Cost ($):" style="-fx-text-fill: #CDD6F4; -fx-font-weight: bold;"/>
+                <TextField fx:id="costField" promptText="0.00"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="4" GridPane.rowIndex="0" alignment="BOTTOM_RIGHT">
+                <Button text="Renew License" onAction="#handleRenew" styleClass="btn-primary" style="-fx-background-color: #A6E3A1; -fx-text-fill: #11111B; -fx-padding: 9 15 9 15;"/>
+            </VBox>
+
+            <!-- Row 1 -->
+            <VBox GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="1" spacing="4">
+                <Label text="Renewal Remarks / Notes:" style="-fx-text-fill: #CDD6F4;"/>
+                <TextField fx:id="remarksField" promptText="e.g. Extended annual subscription via vendor invoice #1042"/>
+            </VBox>
+        </GridPane>
+    </VBox>
+
+    <!-- Filter & Action Bar -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="🔍 Search renewal history..." prefWidth="280"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="↻ Refresh History" onAction="#loadData" styleClass="btn-secondary"/>
+    </HBox>
+
+    <!-- Table -->
+    <TableView fx:id="renewalTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colSoftware" text="Software" prefWidth="160"/>
+            <TableColumn fx:id="colLicenseKey" text="License Key" prefWidth="180"/>
+            <TableColumn fx:id="colOldExpiry" text="Old Expiry" prefWidth="110"/>
+            <TableColumn fx:id="colNewExpiry" text="New Expiry" prefWidth="110"/>
+            <TableColumn fx:id="colRenewalDate" text="Renewal Date" prefWidth="110"/>
+            <TableColumn fx:id="colCost" text="Cost ($)" prefWidth="90"/>
+            <TableColumn fx:id="colRenewedBy" text="Renewed By" prefWidth="140"/>
+            <TableColumn fx:id="colRemarks" text="Remarks" prefWidth="200"/>
+        </columns>
+    </TableView>
+</VBox>

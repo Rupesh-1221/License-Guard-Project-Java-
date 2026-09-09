@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.licenseguard.frontend.controller.LoginController" style="-fx-background-color: #11111B;">
+    <VBox alignment="CENTER" spacing="20" maxWidth="420" maxHeight="500" styleClass="kpi-card" style="-fx-border-color: #89B4FA; -fx-padding: 40;">
+        <VBox alignment="CENTER" spacing="5">
+            <Text text="LICENSEGUARD" styleClass="brand-title" style="-fx-font-size: 26px;"/>
+            <Text text="Enterprise Software License Management" styleClass="brand-subtitle"/>
+        </VBox>
+
+        <Region prefHeight="15"/>
+
+        <VBox alignment="CENTER_LEFT" spacing="8" fillWidth="true">
+            <Label text="Username / Email" style="-fx-text-fill: #CDD6F4; -fx-font-weight: bold;"/>
+            <TextField fx:id="emailField" promptText="admin@licenseguard.com" text="admin@licenseguard.com"/>
+        </VBox>
+
+        <VBox alignment="CENTER_LEFT" spacing="8" fillWidth="true">
+            <Label text="Password" style="-fx-text-fill: #CDD6F4; -fx-font-weight: bold;"/>
+            <PasswordField fx:id="passwordField" promptText="••••••••" text="admin123"/>
+        </VBox>
+
+        <Region prefHeight="10"/>
+
+        <Button text="Sign In to Dashboard" onAction="#handleLogin" maxWidth="Infinity" styleClass="btn-primary" style="-fx-font-size: 14px; -fx-padding: 10;"/>
+
+        <Region prefHeight="10"/>
+
+        <HBox alignment="CENTER" spacing="8">
+            <Label fx:id="statusLabel" text="Checking backend status..." styleClass="status-pill-online"/>
+            <Button text="Retry" onAction="#checkBackendConnection" styleClass="btn-secondary" style="-fx-padding: 2 8 2 8; -fx-font-size: 11px;"/>
+        </HBox>
+    </VBox>
+</StackPane>

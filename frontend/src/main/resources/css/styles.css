@@ -1,0 +1,248 @@
+/* LicenseGuard Desktop CSS Theme - Modern Dark Slate Palette */
+
+.root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-base: #181825;
+    -fx-background-color: #11111B;
+    -fx-text-fill: #CDD6F4;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    -fx-background-color: #181825;
+    -fx-border-color: #313244;
+    -fx-border-width: 0 1 0 0;
+}
+
+.brand-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-fill: #89B4FA;
+}
+
+.brand-subtitle {
+    -fx-font-size: 11px;
+    -fx-fill: #A6ADC8;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #BAC2DE;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 15 10 15;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: #313244;
+    -fx-text-fill: #F5E0DC;
+}
+
+.nav-button.active {
+    -fx-background-color: #89B4FA;
+    -fx-text-fill: #11111B;
+    -fx-font-weight: bold;
+}
+
+/* Top Header Bar */
+.header-bar {
+    -fx-background-color: #181825;
+    -fx-border-color: #313244;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 15 25 15 25;
+}
+
+.header-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-fill: #CDD6F4;
+}
+
+/* Status Indicators */
+.status-pill-online {
+    -fx-background-color: rgba(166, 227, 161, 0.2);
+    -fx-border-color: #A6E3A1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 4 10 4 10;
+    -fx-text-fill: #A6E3A1;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.status-pill-offline {
+    -fx-background-color: rgba(243, 139, 168, 0.2);
+    -fx-border-color: #F38BA8;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 4 10 4 10;
+    -fx-text-fill: #F38BA8;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Dashboard Metric Cards */
+.kpi-card {
+    -fx-background-color: #1E1E2E;
+    -fx-border-color: #313244;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 6, 0, 0, 2);
+}
+
+.kpi-title {
+    -fx-font-size: 12px;
+    -fx-fill: #A6ADC8;
+    -fx-font-weight: bold;
+}
+
+.kpi-value {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-fill: #CDD6F4;
+}
+
+/* Accent Colors */
+.kpi-blue { -fx-border-color: #89B4FA; }
+.kpi-green { -fx-border-color: #A6E3A1; }
+.kpi-amber { -fx-border-color: #F9E2AF; }
+.kpi-red { -fx-border-color: #F38BA8; }
+
+/* Buttons */
+.btn-primary {
+    -fx-background-color: #89B4FA;
+    -fx-text-fill: #11111B;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #B4BEFE;
+}
+
+.btn-secondary {
+    -fx-background-color: #313244;
+    -fx-text-fill: #CDD6F4;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #45475A;
+}
+
+.btn-danger {
+    -fx-background-color: #F38BA8;
+    -fx-text-fill: #11111B;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #EBA0AC;
+}
+
+.btn-warning {
+    -fx-background-color: #FAB387;
+    -fx-text-fill: #11111B;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+}
+
+/* Forms & Text Fields */
+.text-field, .password-field, .text-area, .combo-box, .date-picker {
+    -fx-background-color: #313244;
+    -fx-text-fill: #CDD6F4;
+    -fx-prompt-text-fill: #6C7086;
+    -fx-border-color: #45475A;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused, .combo-box:focused, .date-picker:focused {
+    -fx-border-color: #89B4FA;
+}
+
+/* TableView Styling */
+.table-view {
+    -fx-background-color: #1E1E2E;
+    -fx-border-color: #313244;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #181825;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 38;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #89B4FA;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: #1E1E2E;
+    -fx-border-color: transparent transparent #313244 transparent;
+    -fx-padding: 4 0 4 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #181825;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #313244;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #45475A;
+}
+
+/* Badges */
+.badge-active {
+    -fx-background-color: rgba(166, 227, 161, 0.2);
+    -fx-text-fill: #A6E3A1;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+}
+
+.badge-expiring {
+    -fx-background-color: rgba(249, 226, 175, 0.2);
+    -fx-text-fill: #F9E2AF;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+}
+
+.badge-expired {
+    -fx-background-color: rgba(243, 139, 168, 0.2);
+    -fx-text-fill: #F38BA8;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+}
+
+.badge-suspended {
+    -fx-background-color: rgba(147, 153, 178, 0.2);
+    -fx-text-fill: #BAC2DE;
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+}
