@@ -72,6 +72,9 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public void deleteDepartment(Integer departmentId) {
         Department department = findDepartmentEntityById(departmentId);
+        if (department.getUsers() != null && !department.getUsers().isEmpty()) {
+            throw new com.licenseguard.exception.BadRequestException("Cannot delete department because it still has assigned users.");
+        }
         departmentRepository.delete(department);
     }
 

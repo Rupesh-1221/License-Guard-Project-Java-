@@ -108,6 +108,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUser(Integer userId) {
         User user = findUserEntityById(userId);
+        
+        if (user.getLicenseAssignments() != null && !user.getLicenseAssignments().isEmpty()) {
+            throw new com.licenseguard.exception.BadRequestException("Cannot delete user because they have license assignments.");
+        }
+        
+        if (user.getRenewals() != null && !user.getRenewals().isEmpty()) {
+            throw new com.licenseguard.exception.BadRequestException("Cannot delete user because they are associated with license renewals.");
+        }
+        
         userRepository.delete(user);
     }
 

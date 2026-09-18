@@ -74,6 +74,9 @@ public class VendorServiceImpl implements VendorService {
     @Override
     public void deleteVendor(Integer vendorId) {
         Vendor vendor = findVendorEntityById(vendorId);
+        if (vendor.getSoftwareList() != null && !vendor.getSoftwareList().isEmpty()) {
+            throw new com.licenseguard.exception.BadRequestException("Cannot delete vendor because they have associated software.");
+        }
         vendorRepository.delete(vendor);
     }
 

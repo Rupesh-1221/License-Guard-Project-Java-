@@ -59,6 +59,11 @@ public class SoftwareServiceImpl implements SoftwareService {
                     .orElseThrow(() -> new ResourceNotFoundException("Vendor not found with id: " + request.getVendorId()));
         }
 
+        if (vendor != null && softwareRepository.existsBySoftwareNameIgnoreCaseAndVersionAndVendorVendorId(
+                request.getSoftwareName(), request.getVersion(), vendor.getVendorId())) {
+            throw new com.licenseguard.exception.DuplicateResourceException("Software '" + request.getSoftwareName() + "' version '" + request.getVersion() + "' already exists for this vendor");
+        }
+
         Software software = new Software();
         software.setSoftwareName(request.getSoftwareName());
         software.setVersion(request.getVersion());
@@ -79,6 +84,16 @@ public class SoftwareServiceImpl implements SoftwareService {
                     .orElseThrow(() -> new ResourceNotFoundException("Vendor not found with id: " + request.getVendorId()));
         }
 
+        boolean nameChanged = !software.getSoftwareName().equalsIgnoreCase(request.getSoftwareName());
+        boolean versionChanged = !software.getVersion().equalsIgnoreCase(request.getVersion());
+        boolean vendorChanged = vendor != null && (software.getVendor() == null || !software.getVendor().getVendorId().equals(vendor.getVendorId()));
+
+        if ((nameChanged || versionChanged || vendorChanged) && vendor != null &&
+                softwareRepository.existsBySoftwareNameIgnoreCaseAndVersionAndVendorVendorId(
+                        request.getSoftwareName(), request.getVersion(), vendor.getVendorId())) {
+            throw new com.licenseguard.exception.DuplicateResourceException("Software '" + request.getSoftwareName() + "' version '" + request.getVersion() + "' already exists for this vendor");
+        }
+
         software.setSoftwareName(request.getSoftwareName());
         software.setVersion(request.getVersion());
         software.setDescription(request.getDescription());
@@ -91,6 +106,9 @@ public class SoftwareServiceImpl implements SoftwareService {
     @Override
     public void deleteSoftware(Integer softwareId) {
         Software software = findSoftwareEntityById(softwareId);
+        if (software.getLicenses() != null && !software.getLicenses().isEmpty()) {
+            throw new com.licenseguard.exception.BadRequestException("Cannot delete software because it has associated licenses.");
+        }
         softwareRepository.delete(software);
     }
 

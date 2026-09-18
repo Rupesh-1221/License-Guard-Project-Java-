@@ -127,11 +127,7 @@ public class LicenseAssignmentServiceImpl implements LicenseAssignmentService {
     public void deleteAssignment(Integer assignmentId) {
         LicenseAssignment assignment = findAssignmentEntityById(assignmentId);
         if ("ACTIVE".equalsIgnoreCase(assignment.getStatus())) {
-            License license = assignment.getLicense();
-            if (license != null && license.getAvailableSeats() < license.getTotalSeats()) {
-                license.setAvailableSeats(license.getAvailableSeats() + 1);
-                licenseRepository.save(license);
-            }
+            throw new com.licenseguard.exception.BadRequestException("Cannot delete an active assignment. Please unassign the license first.");
         }
         assignmentRepository.delete(assignment);
     }

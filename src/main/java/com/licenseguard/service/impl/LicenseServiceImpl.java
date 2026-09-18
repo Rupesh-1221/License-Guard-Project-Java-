@@ -82,6 +82,13 @@ public class LicenseServiceImpl implements LicenseService {
         Software software = softwareRepository.findById(request.getSoftwareId())
                 .orElseThrow(() -> new ResourceNotFoundException("Software not found with id: " + request.getSoftwareId()));
 
+        if (request.getStartDate() != null && request.getPurchaseDate() != null && request.getStartDate().isBefore(request.getPurchaseDate())) {
+            throw new com.licenseguard.exception.BadRequestException("Start date cannot be before purchase date");
+        }
+        if (request.getExpiryDate() != null && request.getStartDate() != null && request.getExpiryDate().isBefore(request.getStartDate())) {
+            throw new com.licenseguard.exception.BadRequestException("Expiry date cannot be before start date");
+        }
+
         License license = new License();
         license.setSoftware(software);
         license.setLicenseKey(request.getLicenseKey());
@@ -110,6 +117,13 @@ public class LicenseServiceImpl implements LicenseService {
         Software software = softwareRepository.findById(request.getSoftwareId())
                 .orElseThrow(() -> new ResourceNotFoundException("Software not found with id: " + request.getSoftwareId()));
 
+        if (request.getStartDate() != null && request.getPurchaseDate() != null && request.getStartDate().isBefore(request.getPurchaseDate())) {
+            throw new com.licenseguard.exception.BadRequestException("Start date cannot be before purchase date");
+        }
+        if (request.getExpiryDate() != null && request.getStartDate() != null && request.getExpiryDate().isBefore(request.getStartDate())) {
+            throw new com.licenseguard.exception.BadRequestException("Expiry date cannot be before start date");
+        }
+
         license.setSoftware(software);
         license.setLicenseKey(request.getLicenseKey());
         license.setLicenseType(request.getLicenseType());
@@ -132,6 +146,15 @@ public class LicenseServiceImpl implements LicenseService {
     @Override
     public void deleteLicense(Integer licenseId) {
         License license = findLicenseEntityById(licenseId);
+        
+        if (license.getLicenseAssignments() != null && !license.getLicenseAssignments().isEmpty()) {
+            throw new com.licenseguard.exception.BadRequestException("Cannot delete license because it has assignments.");
+        }
+        
+        if (license.getRenewals() != null && !license.getRenewals().isEmpty()) {
+            throw new com.licenseguard.exception.BadRequestException("Cannot delete license because it has renewals.");
+        }
+        
         licenseRepository.delete(license);
     }
 

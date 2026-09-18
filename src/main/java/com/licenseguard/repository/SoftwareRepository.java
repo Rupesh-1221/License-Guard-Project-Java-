@@ -10,4 +10,5 @@ import java.util.List;
 public interface SoftwareRepository extends JpaRepository<Software, Integer> {
     List<Software> findByVendorVendorId(Integer vendorId);
     List<Software> findBySoftwareNameContainingIgnoreCase(String softwareName);
+    boolean existsBySoftwareNameIgnoreCaseAndVersionAndVendorVendorId(String softwareName, String version, Integer vendorId);
 }
