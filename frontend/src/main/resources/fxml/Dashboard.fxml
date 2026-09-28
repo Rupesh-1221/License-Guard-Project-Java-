@@ -63,26 +63,26 @@
         <HBox spacing="20">
             <!-- Recent Assignments Table -->
             <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="kpi-card">
-                <Text text="Recent License Assignments" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #89B4FA;"/>
+                <Text text="Recent License Assignments" style="-fx-font-size: 21px; -fx-font-weight: bold; -fx-fill: #89B4FA;"/>
                 <TableView fx:id="recentAssignmentsTable" prefHeight="220">
                     <columns>
-                        <TableColumn fx:id="colAsgnUser" text="User" prefWidth="120"/>
-                        <TableColumn fx:id="colAsgnSoftware" text="Software" prefWidth="120"/>
-                        <TableColumn fx:id="colAsgnDate" text="Assigned Date" prefWidth="110"/>
-                        <TableColumn fx:id="colAsgnStatus" text="Status" prefWidth="90"/>
+                        <TableColumn fx:id="colAsgnUser" text="User" prefWidth="180"/>
+                        <TableColumn fx:id="colAsgnSoftware" text="Software" prefWidth="180"/>
+                        <TableColumn fx:id="colAsgnDate" text="Assigned Date" prefWidth="165"/>
+                        <TableColumn fx:id="colAsgnStatus" text="Status" prefWidth="135"/>
                     </columns>
                 </TableView>
             </VBox>
 
             <!-- Recent Renewals Table -->
             <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="kpi-card">
-                <Text text="Recent Renewals" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #A6E3A1;"/>
+                <Text text="Recent Renewals" style="-fx-font-size: 21px; -fx-font-weight: bold; -fx-fill: #A6E3A1;"/>
                 <TableView fx:id="recentRenewalsTable" prefHeight="220">
                     <columns>
-                        <TableColumn fx:id="colRenSoftware" text="Software" prefWidth="120"/>
-                        <TableColumn fx:id="colRenNewExpiry" text="New Expiry" prefWidth="110"/>
-                        <TableColumn fx:id="colRenCost" text="Cost" prefWidth="90"/>
-                        <TableColumn fx:id="colRenDate" text="Renewed Date" prefWidth="110"/>
+                        <TableColumn fx:id="colRenSoftware" text="Software" prefWidth="180"/>
+                        <TableColumn fx:id="colRenNewExpiry" text="New Expiry" prefWidth="165"/>
+                        <TableColumn fx:id="colRenCost" text="Cost" prefWidth="135"/>
+                        <TableColumn fx:id="colRenDate" text="Renewed Date" prefWidth="165"/>
                     </columns>
                 </TableView>
             </VBox>

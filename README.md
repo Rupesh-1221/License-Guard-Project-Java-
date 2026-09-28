@@ -103,8 +103,14 @@ LicenseGuard/
 - **Database**: MySQL 8.0+
 - **Git**: For version control
 
-## Installation & Usage
-Please refer to the [INSTALLATION.md](INSTALLATION.md) file for complete, step-by-step instructions on setting up the MySQL database, configuring the application properties, and running both the backend server and JavaFX frontend.
+## Documentation & Guides
+- [User Manual](USER_MANUAL.md) - Step-by-step guide for end-users operating the application.
+- [Installation Guide](INSTALLATION.md) - Setup instructions for both developers and users.
+- [Architecture & Design](ARCHITECTURE.md) - Deep dive into system design.
+
+## Download
+Download the latest packaged release for Windows:
+[Download LicenseGuard v1.0.0](https://github.com/Rupesh-1221/License-Guard-Project-Java-/releases/download/v1.0.0/LicenseGuard-Windows.zip)
 
 ## Known Limitations & Future Improvements
 - **Authentication**: Currently lacks an integrated authentication framework (e.g., Spring Security/JWT) and password hashing (BCrypt).
@@ -112,4 +118,4 @@ Please refer to the [INSTALLATION.md](INSTALLATION.md) file for complete, step-b
 - **Audit Logging**: While renewals are tracked, general entity modifications (who updated a software title) are not historically logged.
 
 ---
-**GitHub Repository**: [https://github.com/Rupesh-1221/License-Guard-Project-Java](https://github.com/Rupesh-1221/License-Guard-Project-Java)
+**GitHub Repository**: [License-Guard-Project-Java-](https://github.com/Rupesh-1221/License-Guard-Project-Java-)

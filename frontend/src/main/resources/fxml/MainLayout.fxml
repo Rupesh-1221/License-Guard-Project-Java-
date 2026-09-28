@@ -8,7 +8,7 @@
 <BorderPane stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.licenseguard.frontend.controller.MainLayoutController">
     <!-- Left Sidebar -->
     <left>
-        <VBox spacing="10" prefWidth="240" styleClass="sidebar">
+        <VBox spacing="10" prefWidth="360" styleClass="sidebar">
             <padding>
                 <Insets top="20" right="15" bottom="20" left="15"/>
             </padding>

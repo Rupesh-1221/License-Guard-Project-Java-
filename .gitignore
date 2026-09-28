@@ -32,3 +32,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Secrets and Local Configs ###
+.env
+application-local.properties
+application-dev.properties
+*.log
+*.sqlite
+*.db

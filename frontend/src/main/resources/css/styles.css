@@ -2,6 +2,7 @@
 
 .root {
     -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 15px; /* INCREASED GLOBAL FONT SIZE */
     -fx-base: #181825;
     -fx-background-color: #11111B;
     -fx-text-fill: #CDD6F4;
@@ -15,22 +16,22 @@
 }
 
 .brand-title {
-    -fx-font-size: 20px;
+    -fx-font-size: 26px; /* INCREASED */
     -fx-font-weight: bold;
     -fx-fill: #89B4FA;
 }
 
 .brand-subtitle {
-    -fx-font-size: 11px;
+    -fx-font-size: 14px; /* INCREASED */
     -fx-fill: #A6ADC8;
 }
 
 .nav-button {
     -fx-background-color: transparent;
     -fx-text-fill: #BAC2DE;
-    -fx-font-size: 14px;
+    -fx-font-size: 16px; /* INCREASED */
     -fx-alignment: CENTER_LEFT;
-    -fx-padding: 10 15 10 15;
+    -fx-padding: 14 18 14 18; /* INCREASED PADDING */
     -fx-background-radius: 8;
     -fx-cursor: hand;
 }
@@ -51,24 +52,24 @@
     -fx-background-color: #181825;
     -fx-border-color: #313244;
     -fx-border-width: 0 0 1 0;
-    -fx-padding: 15 25 15 25;
+    -fx-padding: 18 30 18 30; /* INCREASED */
 }
 
 .header-title {
-    -fx-font-size: 22px;
+    -fx-font-size: 26px; /* INCREASED */
     -fx-font-weight: bold;
     -fx-fill: #CDD6F4;
 }
 
-/* Status Indicators */
+/* Status Indicators (Top Header) */
 .status-pill-online {
     -fx-background-color: rgba(166, 227, 161, 0.2);
     -fx-border-color: #A6E3A1;
     -fx-border-radius: 12;
     -fx-background-radius: 12;
-    -fx-padding: 4 10 4 10;
+    -fx-padding: 6 12 6 12; /* INCREASED */
     -fx-text-fill: #A6E3A1;
-    -fx-font-size: 12px;
+    -fx-font-size: 14px; /* INCREASED */
     -fx-font-weight: bold;
 }
 
@@ -77,9 +78,9 @@
     -fx-border-color: #F38BA8;
     -fx-border-radius: 12;
     -fx-background-radius: 12;
-    -fx-padding: 4 10 4 10;
+    -fx-padding: 6 12 6 12; /* INCREASED */
     -fx-text-fill: #F38BA8;
-    -fx-font-size: 12px;
+    -fx-font-size: 14px; /* INCREASED */
     -fx-font-weight: bold;
 }
 
@@ -89,18 +90,18 @@
     -fx-border-color: #313244;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-padding: 15;
+    -fx-padding: 20; /* INCREASED */
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 6, 0, 0, 2);
 }
 
 .kpi-title {
-    -fx-font-size: 12px;
+    -fx-font-size: 15px; /* INCREASED */
     -fx-fill: #A6ADC8;
     -fx-font-weight: bold;
 }
 
 .kpi-value {
-    -fx-font-size: 26px;
+    -fx-font-size: 34px; /* INCREASED */
     -fx-font-weight: bold;
     -fx-fill: #CDD6F4;
 }
@@ -117,7 +118,8 @@
     -fx-text-fill: #11111B;
     -fx-font-weight: bold;
     -fx-background-radius: 6;
-    -fx-padding: 8 16 8 16;
+    -fx-padding: 10 20 10 20; /* INCREASED */
+    -fx-font-size: 15px; /* INCREASED */
     -fx-cursor: hand;
 }
 
@@ -129,7 +131,8 @@
     -fx-background-color: #313244;
     -fx-text-fill: #CDD6F4;
     -fx-background-radius: 6;
-    -fx-padding: 8 16 8 16;
+    -fx-padding: 10 20 10 20; /* INCREASED */
+    -fx-font-size: 15px; /* INCREASED */
     -fx-cursor: hand;
 }
 
@@ -142,7 +145,8 @@
     -fx-text-fill: #11111B;
     -fx-font-weight: bold;
     -fx-background-radius: 6;
-    -fx-padding: 8 16 8 16;
+    -fx-padding: 10 20 10 20; /* INCREASED */
+    -fx-font-size: 15px; /* INCREASED */
     -fx-cursor: hand;
 }
 
@@ -155,7 +159,8 @@
     -fx-text-fill: #11111B;
     -fx-font-weight: bold;
     -fx-background-radius: 6;
-    -fx-padding: 8 16 8 16;
+    -fx-padding: 10 20 10 20; /* INCREASED */
+    -fx-font-size: 15px; /* INCREASED */
     -fx-cursor: hand;
 }
 
@@ -167,7 +172,8 @@
     -fx-border-color: #45475A;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
-    -fx-padding: 8;
+    -fx-padding: 12; /* INCREASED */
+    -fx-font-size: 15px; /* INCREASED */
 }
 
 .text-field:focused, .password-field:focused, .text-area:focused, .combo-box:focused, .date-picker:focused {
@@ -180,6 +186,7 @@
     -fx-border-color: #313244;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
+    -fx-font-size: 15px; /* INCREASED GLOBAL TABLE FONT */
 }
 
 .table-view .column-header-background {
@@ -188,18 +195,27 @@
 
 .table-view .column-header {
     -fx-background-color: transparent;
-    -fx-size: 38;
+    -fx-size: 45; /* INCREASED HEADER HEIGHT */
 }
 
 .table-view .column-header .label {
     -fx-text-fill: #89B4FA;
     -fx-font-weight: bold;
+    -fx-font-size: 15px; /* INCREASED HEADER FONT */
+    -fx-padding: 8;
 }
 
 .table-row-cell {
     -fx-background-color: #1E1E2E;
     -fx-border-color: transparent transparent #313244 transparent;
-    -fx-padding: 4 0 4 0;
+    -fx-padding: 8 0 8 0; /* INCREASED ROW PADDING */
+    -fx-cell-size: 46; /* INCREASED ROW HEIGHT */
+}
+
+.table-cell {
+    -fx-padding: 4 10 4 10; /* EXTRA PADDING FOR READABILITY */
+    -fx-alignment: CENTER-LEFT;
+    -fx-text-fill: #CDD6F4; /* ENSURE HIGH CONTRAST */
 }
 
 .table-row-cell:odd {
@@ -214,35 +230,43 @@
     -fx-background-color: #45475A;
 }
 
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #FFFFFF;
+}
+
 /* Badges */
 .badge-active {
     -fx-background-color: rgba(166, 227, 161, 0.2);
     -fx-text-fill: #A6E3A1;
-    -fx-padding: 3 8 3 8;
-    -fx-background-radius: 10;
+    -fx-padding: 6 12 6 12; /* INCREASED */
+    -fx-background-radius: 12;
     -fx-font-weight: bold;
+    -fx-font-size: 13px; /* INCREASED */
 }
 
 .badge-expiring {
     -fx-background-color: rgba(249, 226, 175, 0.2);
     -fx-text-fill: #F9E2AF;
-    -fx-padding: 3 8 3 8;
-    -fx-background-radius: 10;
+    -fx-padding: 6 12 6 12; /* INCREASED */
+    -fx-background-radius: 12;
     -fx-font-weight: bold;
+    -fx-font-size: 13px; /* INCREASED */
 }
 
 .badge-expired {
     -fx-background-color: rgba(243, 139, 168, 0.2);
     -fx-text-fill: #F38BA8;
-    -fx-padding: 3 8 3 8;
-    -fx-background-radius: 10;
+    -fx-padding: 6 12 6 12; /* INCREASED */
+    -fx-background-radius: 12;
     -fx-font-weight: bold;
+    -fx-font-size: 13px; /* INCREASED */
 }
 
 .badge-suspended {
     -fx-background-color: rgba(147, 153, 178, 0.2);
     -fx-text-fill: #BAC2DE;
-    -fx-padding: 3 8 3 8;
-    -fx-background-radius: 10;
+    -fx-padding: 6 12 6 12; /* INCREASED */
+    -fx-background-radius: 12;
     -fx-font-weight: bold;
+    -fx-font-size: 13px; /* INCREASED */
 }

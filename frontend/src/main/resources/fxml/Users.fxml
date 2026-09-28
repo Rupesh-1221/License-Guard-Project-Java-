@@ -8,8 +8,8 @@
 <VBox spacing="15" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.licenseguard.frontend.controller.UserController">
     <!-- Action Bar -->
     <HBox spacing="12" alignment="CENTER_LEFT">
-        <TextField fx:id="searchField" promptText="🔍 Search users..." prefWidth="250"/>
-        <ComboBox fx:id="departmentFilter" promptText="Filter by Department" prefWidth="180"/>
+        <TextField fx:id="searchField" promptText="🔍 Search users..." prefWidth="375"/>
+        <ComboBox fx:id="departmentFilter" promptText="Filter by Department" prefWidth="270"/>
         <Region HBox.hgrow="ALWAYS"/>
         <Button text="↻ Refresh" onAction="#loadData" styleClass="btn-secondary"/>
         <Button text="+ Add User" onAction="#handleAdd" styleClass="btn-primary"/>
@@ -18,13 +18,13 @@
     <!-- Table -->
     <TableView fx:id="userTable" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
-            <TableColumn fx:id="colName" text="Full Name" prefWidth="180"/>
-            <TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
-            <TableColumn fx:id="colRole" text="Role" prefWidth="100"/>
-            <TableColumn fx:id="colDepartment" text="Department" prefWidth="150"/>
-            <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
-            <TableColumn fx:id="colActions" text="Actions" prefWidth="160"/>
+            <TableColumn fx:id="colId" text="ID" prefWidth="75"/>
+            <TableColumn fx:id="colName" text="Full Name" prefWidth="270"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="300"/>
+            <TableColumn fx:id="colRole" text="Role" prefWidth="150"/>
+            <TableColumn fx:id="colDepartment" text="Department" prefWidth="225"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="150"/>
+            <TableColumn fx:id="colActions" text="Actions" prefWidth="240"/>
         </columns>
     </TableView>
 </VBox>

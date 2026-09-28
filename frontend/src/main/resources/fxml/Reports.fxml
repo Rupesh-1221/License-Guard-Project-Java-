@@ -30,32 +30,32 @@
         <!-- Detailed Audit Tables -->
         <VBox spacing="10" styleClass="kpi-card">
             <HBox alignment="CENTER_LEFT">
-                <Text text="Software License Utilization Summary" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #89B4FA;"/>
+                <Text text="Software License Utilization Summary" style="-fx-font-size: 21px; -fx-font-weight: bold; -fx-fill: #89B4FA;"/>
                 <Region HBox.hgrow="ALWAYS"/>
                 <Button text="↻ Refresh Audit Data" onAction="#loadData" styleClass="btn-secondary"/>
             </HBox>
             <TableView fx:id="softwareSummaryTable" prefHeight="240">
                 <columns>
-                    <TableColumn fx:id="colSoftwareName" text="Software Name" prefWidth="200"/>
-                    <TableColumn fx:id="colVendorName" text="Vendor" prefWidth="160"/>
-                    <TableColumn fx:id="colTotalLicenses" text="Total Licenses" prefWidth="120"/>
-                    <TableColumn fx:id="colTotalSeats" text="Total Seats" prefWidth="110"/>
-                    <TableColumn fx:id="colAvailableSeats" text="Available Seats" prefWidth="120"/>
-                    <TableColumn fx:id="colAssignedCount" text="Active Assignments" prefWidth="150"/>
+                    <TableColumn fx:id="colSoftwareName" text="Software Name" prefWidth="300"/>
+                    <TableColumn fx:id="colVendorName" text="Vendor" prefWidth="240"/>
+                    <TableColumn fx:id="colTotalLicenses" text="Total Licenses" prefWidth="180"/>
+                    <TableColumn fx:id="colTotalSeats" text="Total Seats" prefWidth="165"/>
+                    <TableColumn fx:id="colAvailableSeats" text="Available Seats" prefWidth="180"/>
+                    <TableColumn fx:id="colAssignedCount" text="Active Assignments" prefWidth="225"/>
                 </columns>
             </TableView>
         </VBox>
 
         <!-- Expiring Licenses Alert Table -->
         <VBox spacing="10" styleClass="kpi-card, kpi-amber">
-            <Text text="Expiring Licenses Alert (Next 30 Days)" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #F9E2AF;"/>
+            <Text text="Expiring Licenses Alert (Next 30 Days)" style="-fx-font-size: 21px; -fx-font-weight: bold; -fx-fill: #F9E2AF;"/>
             <TableView fx:id="expiringLicensesTable" prefHeight="200">
                 <columns>
-                    <TableColumn fx:id="colExpSoftware" text="Software" prefWidth="180"/>
-                    <TableColumn fx:id="colExpKey" text="License Key" prefWidth="200"/>
-                    <TableColumn fx:id="colExpExpiry" text="Expiry Date" prefWidth="120"/>
-                    <TableColumn fx:id="colExpAvailable" text="Available Seats" prefWidth="120"/>
-                    <TableColumn fx:id="colExpStatus" text="Status" prefWidth="110"/>
+                    <TableColumn fx:id="colExpSoftware" text="Software" prefWidth="270"/>
+                    <TableColumn fx:id="colExpKey" text="License Key" prefWidth="300"/>
+                    <TableColumn fx:id="colExpExpiry" text="Expiry Date" prefWidth="180"/>
+                    <TableColumn fx:id="colExpAvailable" text="Available Seats" prefWidth="180"/>
+                    <TableColumn fx:id="colExpStatus" text="Status" prefWidth="165"/>
                 </columns>
             </TableView>
         </VBox>
