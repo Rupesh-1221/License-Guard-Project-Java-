@@ -30,7 +30,7 @@ public class LicenseGuardApp extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Failed to load Login.fxml: " + e.getMessage());
         }
     }
 
@@ -42,7 +42,7 @@ public class LicenseGuardApp extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Failed to load MainLayout.fxml: " + e.getMessage());
         }
     }
 

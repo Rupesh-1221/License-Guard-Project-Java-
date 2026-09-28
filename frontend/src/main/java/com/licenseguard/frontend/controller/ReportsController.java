@@ -103,7 +103,7 @@ public class ReportsController {
                     processExpiringLicenses(licenses);
                 });
             } catch (Exception e) {
-                e.printStackTrace();
+                Platform.runLater(() -> com.licenseguard.frontend.util.AlertUtils.showError("Reports Error", "Failed to compile reports: " + e.getMessage()));
             }
         });
     }
